@@ -1,0 +1,102 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+
+.loader {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  animation: rotate 1.6s linear infinite;
+}
+ 
+
+.dot {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+ 
+
+.dot-yellow {
+  background-color: #FFE600;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0s;
+}
+ 
+
+.dot-pink {
+  background-color: #FF2D78;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  animation-delay: 0.2s;
+}
+ 
+
+.dot-green {
+  background-color: #00D94F;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  animation-delay: 0.4s;
+}
+ 
+
+.dot-blue {
+  background-color: #00AAFF;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0.6s;
+}
+ 
+
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+ 
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(0.55);
+    opacity: 0.5;
+  }
+}
+ 
+
+.dot-pink,
+.dot-green {
+  animation-name: pulse-y;
+}
+ 
+@keyframes pulse-y {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%) scale(0.55);
+    opacity: 0.5;
+  }
+}
+ 
